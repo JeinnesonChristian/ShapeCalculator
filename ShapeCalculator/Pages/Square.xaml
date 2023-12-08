@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShapeCalculator.Pages.Square"
+             Title="Square">
+
+    <Grid
+    FlexLayout.AlignSelf="Center"
+    BackgroundColor="White">
+        <Grid
+        ColumnDefinitions="50*,50*,50*"
+        ColumnSpacing="50"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            <VerticalStackLayout
+            Grid.Column="0"
+            Spacing="10"
+            WidthRequest="200"
+            >
+                <HorizontalStackLayout>
+                    <Border Stroke="black">
+                        <Image Source="squarearea.png" WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Border Stroke="black">
+                        <Image Source="squareperimeter.png" WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                <Border Stroke="black">
+                    <Image Source="volumeofcube.png" WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+            Grid.Column="1"
+            Spacing="10"
+            WidthRequest="350"
+            >
+                <HorizontalStackLayout>
+                    <Label
+                    Text="Side"
+                    TextColor="Black"
+                    WidthRequest="200"
+                    VerticalOptions="Center"/>
+                    <Border Stroke="Black">
+                        <Entry
+                        x:Name="sideEntry"
+                        TextColor="Black"
+                        WidthRequest="180"
+                        ToolTipProperties.Text="Required"
+                        />
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label
+                    Text="Result: "
+                    TextColor="Black"
+                    WidthRequest="200"
+                    VerticalOptions="Center"
+                    />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label 
+                    Text="Area"
+                    TextColor="Black"
+                    WidthRequest="200"
+                    VerticalOptions="Center" 
+                     />
+                    <Border Stroke="Black">
+                        <Entry
+                        x:Name="areaEntry"
+                        TextColor="Black"
+                        WidthRequest="180"
+                        ToolTipProperties.Text="Required"
+                        />
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label 
+                    Text="Perimeter"
+                    TextColor="Black"
+                    WidthRequest="200"
+                    VerticalOptions="Center"/>
+                    <Border Stroke="Black">
+                        <Entry
+                        x:Name="perimeterEntry"
+                        TextColor="Black"
+                        WidthRequest="180"
+                        ToolTipProperties.Text="Required"
+                        />
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label
+                    Text="Volume + Cube"
+                    TextColor="Black"
+                    WidthRequest="200"
+                    VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry
+                        x:Name="volumeAndCubeEntry"
+                        TextColor="Black"
+                        WidthRequest="180"
+                        ToolTipProperties.Text="Required"
+                        />
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+            Grid.Column="2"
+            Spacing="10"
+            WidthRequest="350"
+            >
+                <HorizontalStackLayout
+                Spacing="10">
+                    <Frame BorderColor="Black" CornerRadius="5" Padding="2">
+                        <Picker x:Name="unitPickerSquare" TextColor="Black"
+                            WidthRequest="200">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Inches</x:String>
+                                    <x:String>Meters</x:String>
+                                    <x:String>Centimeters</x:String>
+                                    <x:String>Kilometers</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Frame>
+                    <Label x:Name="selectedUnitLabel" HorizontalOptions="Center"/>
+                    <Button Text="Calculate" BackgroundColor="Blue" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="100"
+                        Clicked="CalculateResultSquare"/>
+                    <Button Text="Clear" BackgroundColor="LightGray" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" WidthRequest="100"
+                        Clicked="ClearInput"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

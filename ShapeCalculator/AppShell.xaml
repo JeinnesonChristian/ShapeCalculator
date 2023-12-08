@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShapeCalculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShapeCalculator.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <TabBar>
+        <ShellContent
+        Title="Triangle"
+        ContentTemplate="{DataTemplate local:Triangle}"
+        Route="Triangle"/>
+
+        <ShellContent
+        Title="Square"
+        ContentTemplate="{DataTemplate local:Square}"
+        Route="Square"/>
+
+        <ShellContent
+        Title="Rectangle"
+        ContentTemplate="{DataTemplate local:Rectangle}"
+        Route="Rectangle"/>
+
+        <ShellContent
+        Title="Circle"
+        ContentTemplate="{DataTemplate local:Circle}"
+        Route="Circle"/>
+    </TabBar>
+
+</Shell>
